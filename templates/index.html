@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .custom-file {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        input[type=number] {
+            width: 60px;
+            padding: 5px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Color Extractor</h1>
+        <p>Upload an image to find the most common colors in it.</p>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Select an image:</label>
+                <div class="custom-file">
+                    <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .gif" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="num_colors">Number of colors to extract:</label>
+                <input type="number" name="num_colors" id="num_colors" min="1" max="20" value="5">
+            </div>
+            
+            <button type="submit" class="btn">Extract Colors</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>A simple Flask application for color extraction.</p>
+    </footer>
+</body>
+</html>
